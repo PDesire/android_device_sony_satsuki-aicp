@@ -14,13 +14,15 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/sony/satsuki/full_satsuki.mk)
+$(call inherit-product, device/sony/satsuki/aicp_satsuki.mk)
 
-# Inherit some common CM stuff
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+PRODUCT_NAME := aicp_satsuki
 
-PRODUCT_NAME := lineage_satsuki
+# AICP Device Maintainers
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    DEVICE_MAINTAINERS="Tristan Marsell (PDesire)"
 
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=satsuki PRODUCT_NAME=satsuki
 # Use the latest approved GMS identifiers
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
